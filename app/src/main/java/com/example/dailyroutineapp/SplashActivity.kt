@@ -1,24 +1,36 @@
 package com.example.dailyroutineapp
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import androidx.activity.enableEdgeToEdge
+import android.widget.VideoView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 
 class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
 
+        val videoView = findViewById<VideoView>(R.id.videoViewSplash)
+        val videoPath = "android.resource://" + packageName + "/" + R.raw.video_splash
+        val uri = Uri.parse(videoPath)
 
+        videoView.setVideoURI(uri)
+
+        videoView.setOnPreparedListener { mediaPlayer ->
+            // --- ESTA ES LA CLAVE PARA EL BUCLE ---
+            mediaPlayer.isLooping = true
+            // --------------------------------------
+            mediaPlayer.start()
+        }
+
+        // El temporizador sigue igual: a los 6 segundos salta a la siguiente pantalla
         Handler(Looper.getMainLooper()).postDelayed({
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
-            finish() // cerramos la SplashActivity para que no vuelva al pulsar atrás
-        }, 2000) // 2000 ms = 2 segundos
+            finish()
+        }, 6000)
     }
 }
