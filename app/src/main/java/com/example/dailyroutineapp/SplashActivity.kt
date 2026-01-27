@@ -28,7 +28,7 @@ class SplashActivity : AppCompatActivity() {
 
         // El temporizador sigue igual: a los 6 segundos salta a la siguiente pantalla
         Handler(Looper.getMainLooper()).postDelayed({
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
             finish()
         }, 6000)
