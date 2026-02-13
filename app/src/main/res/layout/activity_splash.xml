@@ -21,12 +21,14 @@
         android:id="@+id/imgPlaceholder"
         android:layout_width="300dp"
         android:layout_height="300dp"
-        android:src="@drawable/logo"
         android:background="#F5F3EE"
+        android:src="@drawable/logo"
         app:layout_constraintBottom_toBottomOf="@id/videoViewSplash"
         app:layout_constraintEnd_toEndOf="@id/videoViewSplash"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@id/videoViewSplash"
-        app:layout_constraintTop_toTopOf="@id/videoViewSplash" />
+        app:layout_constraintTop_toTopOf="@id/videoViewSplash"
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/txtTitle"

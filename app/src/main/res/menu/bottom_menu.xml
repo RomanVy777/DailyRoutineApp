@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_rutinas"
+        android:icon="@drawable/ic_rutinas"
+        android:title="Ver Rutinas" />
+
+    <item
+        android:id="@+id/nav_add"
+        android:icon="@drawable/ic_add"
+        android:title="Añadir Rutina" />
+
+    <item
+        android:id="@+id/nav_mapa"
+        android:icon="@drawable/ic_map"
+        android:title="Mapa de Rutinas" />
+
+    <item
+        android:id="@+id/nav_ajustes"
+        android:icon="@drawable/ic_settings"
+        android:title="Ajustes" />
+
+</menu>
